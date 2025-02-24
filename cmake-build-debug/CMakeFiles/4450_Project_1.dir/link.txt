@@ -1,0 +1,3 @@
+"C:\Users\hoppe\AppData\Local\Programs\CLion Nova\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\4450_Project_1.dir/objects.a
+C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\ar.exe qc CMakeFiles\4450_Project_1.dir/objects.a @CMakeFiles\4450_Project_1.dir\objects1.rsp
+C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\4450_Project_1.dir/objects.a -Wl,--no-whole-archive -o 4450_Project_1.exe -Wl,--out-implib,lib4450_Project_1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\4450_Project_1.dir\linkLibs.rsp
