@@ -47,10 +47,10 @@ public:
     };
 
 
-    int lookup(char ch);
-    bool isInteger();
-    bool isIdentifier();
-    bool isOperator();
+    int lookup(char ch);//pass char to the lookup function.
+    bool isInteger();//Added for Assignment
+    bool isIdentifier();//Added for Assignment
+    bool isOperator();//Added for Assignment
 
 
 };
@@ -234,20 +234,20 @@ bool Lexicalanalyzer::isOperator() {
 
 
 int main(){
-    Lexicalanalyzer lexer;
+    Lexicalanalyzer lexer;// Call in the Constructor
     string usersInputString; // used to store desired string to analyze.
 
-    cout << "Please input your data to be analyzed: ";
-    getline(cin, usersInputString);
+    cout << "Please input your data to be analyzed: ";// Output for the User to enter there input
+    getline(cin, usersInputString);//Users Input
 
-    lexer.inputString = usersInputString;
-    lexer.index = 0;
+    lexer.inputString = usersInputString;// Assign the users input to inputString in the Lexer Constructor
+    lexer.index = 0;// resetting the index to 0 for the next input
 
-    lexer.getChar();
+    lexer.getChar();//call get char to begin the analysis
 
     do{
-        lexer.lex();
-    }while(lexer.nextToken != -1);
+        lexer.lex();// lex()
+    }while(lexer.nextToken != -1);// Run while there is input left once EOF terminate functions
 
     return 0;
 }
