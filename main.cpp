@@ -30,8 +30,8 @@ public:
 
 
     enum tokenCodeTypes{
-        INT_LIT = 10,       // Integer literals (e.g., 25, 100)
-        IDENT = 11,         // Identifiers (e.g., variable names)
+        INT_LIT = 10,       // Integer literals (exp: 25, 100)
+        IDENT = 11,         // Identifiers (exp: variable names)
 
         ASSIGN_OP = 20,     // Assignment operator (=)
         ADD_OP = 21,        // Addition (+)
@@ -42,7 +42,7 @@ public:
         LEFT_PAREN = 25,    // Left parenthesis (
         RIGHT_PAREN = 26,   // Right parenthesis )
 
-        SEMICOLON = 27      // **NEW: Semicolon (;)**
+        SEMICOLON = 27      // Semicolon (;)
 
     };
 
@@ -89,10 +89,11 @@ void Lexicalanalyzer::getChar() { // Function looks through the input char by ch
     }else{
         charClass = -1;// If char is not recognized error out.
     }
+    // Debugging Output
+   // cout << "[getChar] nextChar: '" << nextChar << "', charClass: " << charClass << endl;
 }
 
 void Lexicalanalyzer::getNonBlank() {// if white space is found. go to the next char in the input.
-    getChar();
 
     while(isspace(nextChar)){
         getChar();
@@ -105,16 +106,30 @@ int Lexicalanalyzer::lex() {
     lexeme.clear(); //Need to clear the lexeme out, so we can move on the  next Char in line of the Input.
 
     getNonBlank();
+
+    // Debugging output
+    //cout << "[lex] Processing charClass: " << charClass << " (nextChar: '" << nextChar << "')" << endl;
     switch (charClass) {
         case LETTER:
             addChar();
-            getChar();
-            while(charClass == LETTER || charClass == DIGIT){
-              addChar();
-              getChar();
+
+            while(true){
+                getChar();
+                if(charClass == LETTER || charClass == DIGIT){
+                    addChar();
+                    //cout << "[lex] Adding char: " << lexeme << endl; // Debugging line
+                }else{
+                    break;
+                }
             }
+
             if(isIdentifier()){
-            nextToken = IDENT;
+                nextToken = IDENT;
+                //cout << "[lex] Identifier detected: " << lexeme << endl; // Debugging line
+            }else
+            {
+                nextToken = -1;
+                cout << "Error -- Invalid Identifier" << endl;
             }
 
             break;
@@ -132,13 +147,14 @@ int Lexicalanalyzer::lex() {
             break;
 
         case UNKNOWN:// Unknown is used for non Letter or Number Chars. I am using it to call the lookup() function to find out if it's an Operator.
-            addChar();
-            getChar();
 
-            if(isOperator()||lexeme == ";" || lexeme == "(" || lexeme == ")"){ // added the ; , ( and ) to the if statement because I was using the isOperator function to look them up.
+            if(isOperator()){
+                addChar();
                 nextToken = lookup(lexeme[0]);// call lookup function to find out if char is an Operator and check one it is.
+                getChar();
             }
             else{
+                nextToken = -1;
                 cout << "Error -- Charater is Unknown." << endl;
             }
             break;
@@ -155,37 +171,37 @@ int Lexicalanalyzer::lex() {
 int Lexicalanalyzer::lookup(char ch) {
     switch (ch) {
         case '(':
-            addChar();
+
             nextToken = LEFT_PAREN;
             break;
         case')':
-            addChar();
+
             nextToken = RIGHT_PAREN;
             break;
         case'+':
-            addChar();
+
             nextToken = ADD_OP;
             break;
         case'-':
-            addChar();
+
             nextToken = SUB_OP;
             break;
         case'*':
-            addChar();
+
             nextToken = MULT_OP;
             break;
         case'/':
-            addChar();
+
             nextToken = DIV_OP;
             break;
 
         case'=':
-            addChar();
+
             nextToken = ASSIGN_OP;
             break;
 
         case';':
-            addChar();
+
             nextToken = SEMICOLON;
             break;
 
@@ -219,17 +235,13 @@ bool Lexicalanalyzer::isIdentifier() {
             return false;
         }
     }
-return true; // if a number or letter found return true.
+    return true; // if a number or letter found return true.
 
 }
 
 bool Lexicalanalyzer::isOperator() {
-    if(lexeme == "+" || lexeme == "-" || lexeme == "*" || lexeme == "/" || lexeme == "="){ // check the user input for any operator.
-        return true; //If one of the operators above are found is will return true to the lex().
-    }else{
-        return false;// If no operators found then it will return false.
-    }
-
+    return(nextChar == '+' || nextChar == '-' || nextChar == '*' ||
+            nextChar == '/' || nextChar == '='|| nextChar == '('|| nextChar == ')'|| nextChar == ';'); // check the user input for any operator.
 }
 
 
@@ -251,5 +263,3 @@ int main(){
 
     return 0;
 }
-
-
