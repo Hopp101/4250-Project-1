@@ -135,7 +135,7 @@ int Lexicalanalyzer::lex() {
             addChar();
             getChar();
 
-            if(isOperator()){
+            if(isOperator()||lexeme == ";" || lexeme == "(" || lexeme == ")"){ // added the ; , ( and ) to the if statement because I was using the isOperator function to look them up.
                 nextToken = lookup(lexeme[0]);// call lookup function to find out if char is an Operator and check one it is.
             }
             else{
@@ -224,7 +224,7 @@ return true; // if a number or letter found return true.
 }
 
 bool Lexicalanalyzer::isOperator() {
-    if(lexeme == "+" || lexeme == "-" || lexeme == "*" || lexeme == "/" || lexeme == "=" || lexeme == ";"){ // check the user input for any operator.
+    if(lexeme == "+" || lexeme == "-" || lexeme == "*" || lexeme == "/" || lexeme == "="){ // check the user input for any operator.
         return true; //If one of the operators above are found is will return true to the lex().
     }else{
         return false;// If no operators found then it will return false.
