@@ -1,3 +1,3 @@
-C:/Users/hoppe/CLionProjects/4450_Project_1/cmake-build-debug/CMakeFiles/4450_Project_1.dir
-C:/Users/hoppe/CLionProjects/4450_Project_1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/hoppe/CLionProjects/4450_Project_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/hoppe/CLionProjects/4250-Project-1/cmake-build-debug/CMakeFiles/4450_Project_1.dir
+C:/Users/hoppe/CLionProjects/4250-Project-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/hoppe/CLionProjects/4250-Project-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
