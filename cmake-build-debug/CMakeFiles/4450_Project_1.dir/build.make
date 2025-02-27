@@ -68,28 +68,28 @@ include CMakeFiles/4450_Project_1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/4450_Project_1.dir/flags.make
 
-CMakeFiles/4450_Project_1.dir/main.cpp.obj: CMakeFiles/4450_Project_1.dir/flags.make
-CMakeFiles/4450_Project_1.dir/main.cpp.obj: C:/Users/hoppe/CLionProjects/4250-Project-1/main.cpp
-CMakeFiles/4450_Project_1.dir/main.cpp.obj: CMakeFiles/4450_Project_1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hoppe\CLionProjects\4250-Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/4450_Project_1.dir/main.cpp.obj"
-	C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/4450_Project_1.dir/main.cpp.obj -MF CMakeFiles\4450_Project_1.dir\main.cpp.obj.d -o CMakeFiles\4450_Project_1.dir\main.cpp.obj -c C:\Users\hoppe\CLionProjects\4250-Project-1\main.cpp
+CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj: CMakeFiles/4450_Project_1.dir/flags.make
+CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj: C:/Users/hoppe/CLionProjects/4250-Project-1/LexicalAnalyzer.cpp
+CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj: CMakeFiles/4450_Project_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hoppe\CLionProjects\4250-Project-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj"
+	C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj -MF CMakeFiles\4450_Project_1.dir\LexicalAnalyzer.cpp.obj.d -o CMakeFiles\4450_Project_1.dir\LexicalAnalyzer.cpp.obj -c C:\Users\hoppe\CLionProjects\4250-Project-1\LexicalAnalyzer.cpp
 
-CMakeFiles/4450_Project_1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/4450_Project_1.dir/main.cpp.i"
-	C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hoppe\CLionProjects\4250-Project-1\main.cpp > CMakeFiles\4450_Project_1.dir\main.cpp.i
+CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.i"
+	C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hoppe\CLionProjects\4250-Project-1\LexicalAnalyzer.cpp > CMakeFiles\4450_Project_1.dir\LexicalAnalyzer.cpp.i
 
-CMakeFiles/4450_Project_1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/4450_Project_1.dir/main.cpp.s"
-	C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoppe\CLionProjects\4250-Project-1\main.cpp -o CMakeFiles\4450_Project_1.dir\main.cpp.s
+CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.s"
+	C:\Users\hoppe\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoppe\CLionProjects\4250-Project-1\LexicalAnalyzer.cpp -o CMakeFiles\4450_Project_1.dir\LexicalAnalyzer.cpp.s
 
 # Object files for target 4450_Project_1
 4450_Project_1_OBJECTS = \
-"CMakeFiles/4450_Project_1.dir/main.cpp.obj"
+"CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj"
 
 # External object files for target 4450_Project_1
 4450_Project_1_EXTERNAL_OBJECTS =
 
-4450_Project_1.exe: CMakeFiles/4450_Project_1.dir/main.cpp.obj
+4450_Project_1.exe: CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj
 4450_Project_1.exe: CMakeFiles/4450_Project_1.dir/build.make
 4450_Project_1.exe: CMakeFiles/4450_Project_1.dir/linkLibs.rsp
 4450_Project_1.exe: CMakeFiles/4450_Project_1.dir/objects1.rsp

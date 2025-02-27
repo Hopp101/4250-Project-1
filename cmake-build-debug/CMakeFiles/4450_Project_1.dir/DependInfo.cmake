@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/hoppe/CLionProjects/4250-Project-1/main.cpp" "CMakeFiles/4450_Project_1.dir/main.cpp.obj" "gcc" "CMakeFiles/4450_Project_1.dir/main.cpp.obj.d"
+  "C:/Users/hoppe/CLionProjects/4250-Project-1/LexicalAnalyzer.cpp" "CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj" "gcc" "CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

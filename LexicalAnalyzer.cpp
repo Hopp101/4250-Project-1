@@ -4,8 +4,9 @@
 
 using namespace std;
 
-//Creating a Lexicalanalyzer Class
+//Creating a Lexicalanalyzer Class. in C++, this is encapsulation.
 class Lexicalanalyzer{
+
     //All C Global and Function declarations in a private access specifier.
 private:
 
@@ -30,19 +31,19 @@ public:
 
 
     enum tokenCodeTypes{
-        INT_LIT = 10,       // Integer literals (exp: 25, 100)
-        IDENT = 11,         // Identifiers (exp: variable names)
+        INT_LIT = 10,       // Integer literals (Numbers)
+        IDENT = 11,         // Identifiers (variables)
 
-        ASSIGN_OP = 20,     // Assignment operator (=)
-        ADD_OP = 21,        // Addition (+)
-        SUB_OP = 22,        // Subtraction (-)
-        MULT_OP = 23,       // Multiplication (*)
-        DIV_OP = 24,        // Division (/)
+        ASSIGN_OP = 20,     // Assignment operator
+        ADD_OP = 21,        // Addition
+        SUB_OP = 22,        // Subtraction
+        MULT_OP = 23,       // Multiplication
+        DIV_OP = 24,        // Division
 
-        LEFT_PAREN = 25,    // Left parenthesis (
-        RIGHT_PAREN = 26,   // Right parenthesis )
+        LEFT_PAREN = 25,    // Left parenthesis
+        RIGHT_PAREN = 26,   // Right parenthesis
 
-        SEMICOLON = 27      // Semicolon (;)
+        SEMICOLON = 27      // Semicolon
 
     };
 
@@ -55,6 +56,7 @@ public:
 
 };
 
+// Setting up my Char classes that I call in the lex().
 enum CharacterClasses{
     LETTER = 0,
     DIGIT = 1,
@@ -62,6 +64,7 @@ enum CharacterClasses{
 
 };
 
+//Adding current Char to nextChar
 void Lexicalanalyzer::addChar() {
 
     if(lexeme.length() <= 98){ // Needed to replace the LexLen <= 98 due to how fast the program grows. lexeme.length() will set the growth as big as the User inputs.
@@ -72,6 +75,7 @@ void Lexicalanalyzer::addChar() {
 
 }
 
+//Grad the next Char in the string and read it. here we will determine if the char is a variable , number or something else.
 void Lexicalanalyzer::getChar() { // Function looks through the input char by char and sorts it into three buckets.
     if((index < inputString.length())){ // Bug #1, Found that != EOF or -1 will not compile in C++ like it does in C.
         nextChar = inputString[index++];
@@ -93,6 +97,7 @@ void Lexicalanalyzer::getChar() { // Function looks through the input char by ch
    // cout << "[getChar] nextChar: '" << nextChar << "', charClass: " << charClass << endl;
 }
 
+//skips all the white spaces.
 void Lexicalanalyzer::getNonBlank() {// if white space is found. go to the next char in the input.
 
     while(isspace(nextChar)){
@@ -101,6 +106,7 @@ void Lexicalanalyzer::getNonBlank() {// if white space is found. go to the next 
 
 
 }
+
 // the lex() Method will take in each Char for the getChar function and check to see what type of Lexeme it is; Number, Letter or Operator.
 int Lexicalanalyzer::lex() {
     lexeme.clear(); //Need to clear the lexeme out, so we can move on the  next Char in line of the Input.
@@ -164,10 +170,11 @@ int Lexicalanalyzer::lex() {
             lexeme = "EOF"; // replaced this with the C version. If we were to keep the C version the program can potentially crash do to the dynamical growth.
             break;
     }
-    cout << "Next token is "<< nextToken << ", Next lexeme is "<< lexeme << endl;
+    cout << "Token is "<< nextToken << ", Lexeme is "<< lexeme << endl;
     return nextToken;
 }
 
+// Once lex() figures out what type of lexeme it is. lookup will associate the new char with a number as initialized above.
 int Lexicalanalyzer::lookup(char ch) {
     switch (ch) {
         case '(':
@@ -213,7 +220,7 @@ int Lexicalanalyzer::lookup(char ch) {
     return nextToken;
 }
 
-
+//Check to see if char is a number.
 bool Lexicalanalyzer::isInteger() {
     if(lexeme.empty()) return false; //Make sure the input is not empty.
 
@@ -226,6 +233,8 @@ bool Lexicalanalyzer::isInteger() {
 
 }
 
+
+// Check to see if char is a Variable
 bool Lexicalanalyzer::isIdentifier() {
     if (lexeme.empty() || !isalpha(lexeme[0])) return false; // First Charater must be a Letter
 
@@ -239,12 +248,13 @@ bool Lexicalanalyzer::isIdentifier() {
 
 }
 
+//Called when lexeme is UNKOWN. this will check to see if char is an operator or semi-colon.
 bool Lexicalanalyzer::isOperator() {
     return(nextChar == '+' || nextChar == '-' || nextChar == '*' ||
-            nextChar == '/' || nextChar == '='|| nextChar == '('|| nextChar == ')'|| nextChar == ';'); // check the user input for any operator.
+            nextChar == '/' || nextChar == '='|| nextChar == '('|| nextChar == ')'|| nextChar == ';');
 }
 
-
+//Main will prompt the user for an input like result = x + y and the will store this string to inputString to use throughout the program.
 int main(){
     Lexicalanalyzer lexer;// Call in the Constructor
     string usersInputString; // used to store desired string to analyze.

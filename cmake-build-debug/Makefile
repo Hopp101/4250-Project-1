@@ -128,29 +128,29 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/build
 .PHONY : 4450_Project_1/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+LexicalAnalyzer.obj: LexicalAnalyzer.cpp.obj
+.PHONY : LexicalAnalyzer.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+LexicalAnalyzer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.obj
+.PHONY : LexicalAnalyzer.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+LexicalAnalyzer.i: LexicalAnalyzer.cpp.i
+.PHONY : LexicalAnalyzer.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/main.cpp.i
-.PHONY : main.cpp.i
+LexicalAnalyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.i
+.PHONY : LexicalAnalyzer.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+LexicalAnalyzer.s: LexicalAnalyzer.cpp.s
+.PHONY : LexicalAnalyzer.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/main.cpp.s
-.PHONY : main.cpp.s
+LexicalAnalyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4450_Project_1.dir\build.make CMakeFiles/4450_Project_1.dir/LexicalAnalyzer.cpp.s
+.PHONY : LexicalAnalyzer.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... 4450_Project_1
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... LexicalAnalyzer.obj
+	@echo ... LexicalAnalyzer.i
+	@echo ... LexicalAnalyzer.s
 .PHONY : help
 
 

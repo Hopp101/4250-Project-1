@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/hoppe/CLionProjects/4250-Project-1/main.cpp">
+		<Unit filename="C:/Users/hoppe/CLionProjects/4250-Project-1/LexicalAnalyzer.cpp">
 			<Option target="4450_Project_1"/>
 		</Unit>
 		<Unit filename="C:/Users/hoppe/CLionProjects/4250-Project-1/CMakeLists.txt">
